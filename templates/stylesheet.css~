@@ -1,0 +1,16 @@
+.caption {
+	font-style: italic;
+	padding-top: 0px;
+	font-family: "Times New Roman", Times, serif;
+}
+
+.image {
+  display: inline-block;
+  height: 100vh;
+  width: 100%;
+}
+
+img {
+  height: 100%;
+  vertical-align: top;
+}
