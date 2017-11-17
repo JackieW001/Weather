@@ -14,7 +14,8 @@ Devlog:
 
 2017-11-16
 ----------
-
+chenX -- 6:16 PM
+  Made test file (lol.py) for google vision
 
 2017-11-15
 ----------
