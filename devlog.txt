@@ -3,11 +3,23 @@ Jackie Woo, Xavier Chen, Alex Taradachuk, Angel Ng
 Period 8 Soft Dev Project 01
 
 Devlog:
-
-2017-11-18
+2017-11-23
 ----------
 
+2017-11-22
+----------
 
+2017-11-21
+----------
+
+2017-11-20
+----------
+
+2017-11-19
+----------
+wooJ -- 3:43 PM
+  Added skeleton code and integrated html/css with flask
+  
 2017-11-17
 ----------
 chenX -- 2:05 PM
