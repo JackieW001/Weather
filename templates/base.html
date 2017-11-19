@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-		<link rel="stylesheet" href="stylesheet.css">
-		<title>
-		{{title}}
-		</title>
-	</head>
-	<body>
-		{% block content1 %}
-		<h1> Welcome to the Weather Team's image-food API! </h1>
-		<div class= "image"> <img src="bigmac.jpg"> </div>
-		<div class="caption">
-		Here is a picture of a gourmet food! 
-		</div>
-		<br>	
-		<h4> A few requirements: </h4>
-		<ul> 
-			<li> Don't have any faces in the picture! </li>
-			<li> Don't have multiple foods in the picture! </li>
-		</ul>	
-		{% endblock %}
-	</body>
+  <head>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="base.css">
+    {% block head %}
+    {% endblock %}
+  </head>
+  
+  <body>
+    {% block content1 %}
+    {% endblock %}
+  </body>
 </html>
 
