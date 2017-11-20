@@ -2,9 +2,7 @@
   "requests": [
     {
       "image": {
-        "source": {
-          "imageUri": "https://www.mcdonalds.com/content/dam/usa/documents/newbigmac/newbigmac2dt.jpg"
-        }
+        "content": "toBeReplaced"
       },
       "features": [
         {
