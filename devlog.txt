@@ -19,6 +19,8 @@ Devlog:
 ----------
 wooJ -- 3:43 PM
   Added skeleton code and integrated html/css with flask
+chenX -- 9:08 PM
+  Finished base64 encoding and can be used with Google Vision now.
   
 2017-11-17
 ----------
