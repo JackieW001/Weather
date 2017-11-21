@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import requests, base64
+import requests, base64, json
 app = Flask(__name__)
 
 newJSON = ""
@@ -17,6 +17,17 @@ def root():
     data = replaceRequest("static/bigmac.jpg")
     #print data
     response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=%s'%(key), data=data, headers={'Content-Type': 'application/json'})
+
+    key2 = open('f2fKey.txt', 'rb').read()
+
+    dict = json.loads(response.text)
+    print 'TESTING'
+    for keys in dict['responses']['labelAnnotations']:
+        if keys == 'description':
+            print dict['responses']['labelAnnotations'][keys]
+    print '---------'
+    #response2 = requests.post(url='https://food2fork.com/api/search?key=%s'%(key2))
+    
     print response.text
 
     return render_template("home.html", title="Weather")
