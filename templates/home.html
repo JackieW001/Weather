@@ -21,7 +21,7 @@
       <li> Don't have multiple foods in the picture! </li>
       <li> Input a food image, and then press Get Data button. After pressing the Get Data button, text should appear in the text box below. When the text shows up, click the Submit button! </li>
     </ul>
-    <!--
+
     <input id="file" type="file"/>
     <button id="button">Get Data!</button>
     <br>
@@ -29,16 +29,18 @@
       <input type="text" id="textb64" name="textBox">
       <input type="submit" name="submitted" value="Submit">
     </form>
-    -->
+ 
+    <!---
     <input type="file" id="file"></input>
     <form method="post" action="/recipes/">
       <input type="submit" id="button" value="Submit" name="submitted"></input>
-      <input type="hidden" id="text64" name="textBox">
+      <input type="hidden" id="textb64" name="textBox">
     </form>
+    --->
     
     <script>
-      document.getElementById('button').addEventListener('click', function() {
-      var files = document.getElementById('file').files;
+      document.getElementById("button").addEventListener('click', function() {
+      var files = document.getElementById("file").files;
       if (files.length > 0) {
       getBase64(files[0]);
       }
@@ -50,7 +52,7 @@
       reader.onload = function () {
       var split=reader.result.split("base64,");
       console.log(split[1]);
-      document.getElementByValue("textb64").value = split[1]
+      document.getElementById("textb64").value = split[1]
       };
       reader.onerror = function (error) {
       console.log('Error: ', error);

@@ -54,16 +54,19 @@ def callgvision():
 def readgvision():
     return ""
 
-@app.route("/recipes/", methods=['GET', 'POST'])
+@app.route("/recipes/", methods=['POST'])
 def recipes():
     #print baseEncode64("static/bigmac.jpg")
     if request.form['submitted'] == "Submit":
         newJSON = replaceRequest2(request.form["textBox"])
+        print newJSON
+    '''
     key = open('apiKey.txt', 'rb').read()
     data = newJSON
     response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=%s'%(key), data=data, headers={'Content-Type': 'application/json'})
     dict = json.loads(response.text)
     print response.text
+    '''
     return render_template("recipes.html")
 
 def callf2f():
