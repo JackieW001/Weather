@@ -17,6 +17,8 @@ wooJ -- 8:50 PM
   Fixed home.html's baseEncoding
 ngA -- 11:36 PM
   Integrated food2fork request calls and generating recipes page html
+taradachukA -- 12:43 PM
+  Added code to get label annotation from google vision call
 
 2017-11-19
 ----------
