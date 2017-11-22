@@ -54,7 +54,7 @@ def callgvision():
 def readgvision():
     return ""
 
-@app.route("/recipes/", methods=['POST'])
+@app.route("/recipes", methods=['POST'])
 def recipes():
     #print baseEncode64("static/bigmac.jpg")
     if request.form['submitted'] == "Submit":
@@ -68,7 +68,7 @@ def recipes():
     print response.text
     '''
     recipes = f2finfo(callf2f())
-    return render_template("recipes.html")
+    return render_template("recipes.html", data = recipes)
 
 def callf2f():
     key = open('f2fKey.txt', 'rb').read()
