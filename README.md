@@ -14,3 +14,5 @@ Using Google API Vision and Food2Fork API, we created a web app that will give y
 3. Run app.py `$ python app.py`
 4. Open web browser
 5. Enter `localhost:5000` in web browser
+
+https://thiscouldbebetter.wordpress.com/2013/07/03/converting-a-file-to-a-base64-dataurl-in-javascript/
