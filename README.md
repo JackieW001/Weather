@@ -1,5 +1,5 @@
 # Weather
-## Jackie Woo, Xavier Chen, Alex Taratyafr5tdjty, Angel Ng
+## Jackie Woo, Xavier Chen, Alex Taradachuk, Angel Ng
 
 # Description
 Using Google API Vision and Food2Fork API, we created a web app that will give you recipes based on a picture of food.
