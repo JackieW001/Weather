@@ -1,34 +1,32 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests, base64, json
 app = Flask(__name__)
 
 newJSON = ""
 
 
-@app.route("/")
+@app.route('/', methods = ['GET','POST'])
 def root():
     '''
-    data = open('request.json', 'rb').read()
+
     key = open('apiKey.txt', 'rb').read()
     response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=%s'%(key), data=data, headers={'Content-Type': 'application/json'})
     print response.text
     '''
-    key = open('apiKey.txt', 'rb').read()
-    data = replaceRequest("static/bigmac.jpg")
+
     #print data
-    response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=%s'%(key), data=data, headers={'Content-Type': 'application/json'})
 
     key2 = open('f2fKey.txt', 'rb').read()
 
-    dict = json.loads(response.text)
+
     print 'TESTING'
-    for keys in dict['responses']['labelAnnotations']:
-        if keys == 'description':
-            print dict['responses']['labelAnnotations'][keys]
-    print '---------'
+#    for keys in dict['responses']['labelAnnotations']:
+#        if keys == 'description':
+#            print dict['responses']['labelAnnotations'][keys]
+#    print '---------'
     #response2 = requests.post(url='https://food2fork.com/api/search?key=%s'%(key2))
-    
-    print response.text
+
+
 
     return render_template("home.html", title="Weather")
 
@@ -46,14 +44,26 @@ def replaceRequest(imagePath):
     newJSON = data.replace("toBeReplaced", encodeString)
     return newJSON
 
+def replaceRequest2(baseSixtyFour):
+    data = open('request.json', 'rb').read()
+    newJSON=data.replace("toBeReplaced", baseSixtyFour)
+    return newJSON
 def callgvision():
     return ""
 
 def readgvision():
     return ""
 
-@app.route("/recipes")
+@app.route("/recipes/", methods=['GET', 'POST'])
 def recipes():
+    #print baseEncode64("static/bigmac.jpg")
+    if request.form['submitted'] == "Submit":
+        newJSON = replaceRequest2(request.form["textBox"])
+    key = open('apiKey.txt', 'rb').read()
+    data = newJSON
+    response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=%s'%(key), data=data, headers={'Content-Type': 'application/json'})
+    dict = json.loads(response.text)
+    print response.text
     return render_template("recipes.html")
 
 def callf2f():
