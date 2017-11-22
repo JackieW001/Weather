@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Recipe</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+	<th>Recipe</th>
+	<th>Picture</th>
+      </tr>
+      {% for recipe in data %}
+      <tr>
+	<td><a href="{{recipe[1]}}">{{recipe[0]}}</a></td>
+	<td><img src="{{recipe[2]}}"></td>
+      </tr>
+    {% endfor %}
+  </body>
+</html>

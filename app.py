@@ -67,11 +67,27 @@ def recipes():
     dict = json.loads(response.text)
     print response.text
     '''
+    recipes = f2finfo(callf2f())
     return render_template("recipes.html")
 
 def callf2f():
-    return ""
+    key = open('f2fKey.txt', 'rb').read()
+    query = "hamburger"
+    r = requests.get('http://food2fork.com/api/search?key=%s&q=%s' %(key, query))
+    data = r.json()["recipes"]
+    return data
 
+def f2finfo(data):
+    recipes = []
+    for recipe in data:
+        temp = []
+        temp.append(recipe["title"])
+        temp.append(recipe["source_url"])
+        temp.append(recipe["image_url"])
+        recipes.append(temp)
+    return recipes
+
+'''
 def f2flinks():
     links = []
     return links
@@ -83,6 +99,7 @@ def f2fimgs():
 def f2ftitles():
     titles = []
     return titles
+'''
 
 if __name__ == '__main__':
     app.debug = True
