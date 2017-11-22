@@ -11,8 +11,12 @@ Devlog:
 
 2017-11-21
 ----------
+chenX -- 8:07 PM
+  Integrated home.html baseEncoding js
 wooJ -- 8:50 PM
   Fixed home.html's baseEncoding
+ngA -- 11:36 PM
+  Integrated food2fork request calls and generating recipes page html
 
 2017-11-19
 ----------
