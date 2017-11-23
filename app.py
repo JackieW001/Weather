@@ -19,7 +19,7 @@ def root():
     key2 = open('f2fKey.txt', 'rb').read()
 
 
-    print 'TESTING'
+#    print 'TESTING'
 #    for keys in dict['responses']['labelAnnotations']:
 #        if keys == 'description':
 #            print dict['responses']['labelAnnotations'][keys]
@@ -48,6 +48,7 @@ def replaceRequest2(baseSixtyFour):
     data = open('request.json', 'rb').read()
     newJSON=data.replace("toBeReplaced", baseSixtyFour)
     return newJSON
+
 def callgvision():
     return ""
 
@@ -56,23 +57,37 @@ def readgvision():
 
 @app.route("/recipes", methods=['POST'])
 def recipes():
-    #print baseEncode64("static/bigmac.jpg")
+    query = pullquery()
+    print query
+    recipes = f2finfo(callf2f(query))
+    return render_template("recipes.html", data = recipes)
+
+def pullquery():
     if request.form['submitted'] == "Submit":
         newJSON = replaceRequest2(request.form["textBox"])
-        print newJSON
-    '''
+        #print newJSON
     key = open('apiKey.txt', 'rb').read()
     data = newJSON
     response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=%s'%(key), data=data, headers={'Content-Type': 'application/json'})
     dict = json.loads(response.text)
-    print response.text
-    '''
-    recipes = f2finfo(callf2f())
-    return render_template("recipes.html", data = recipes)
 
-def callf2f():
+    recipes = dict["responses"][0]["labelAnnotations"]
+    for food in recipes:
+        if "food" in food["description"]:
+            pass
+        elif "dish" in food["description"]:
+            pass
+        elif "cuisine" in food["description"]:
+            pass
+        else:
+            retVal = food["description"]
+            break
+    return retVal
+        
+
+def callf2f(userquery):
     key = open('f2fKey.txt', 'rb').read()
-    query = "hamburger"
+    query = userquery
     r = requests.get('http://food2fork.com/api/search?key=%s&q=%s' %(key, query))
     data = r.json()["recipes"]
     return data
@@ -86,20 +101,6 @@ def f2finfo(data):
         temp.append(recipe["image_url"])
         recipes.append(temp)
     return recipes
-
-'''
-def f2flinks():
-    links = []
-    return links
-
-def f2fimgs():
-    imgs = []
-    return imgs
-
-def f2ftitles():
-    titles = []
-    return titles
-'''
 
 if __name__ == '__main__':
     app.debug = True
