@@ -5,10 +5,9 @@ Period 8 Soft Dev Project 01
 Devlog:
 2017-11-23
 ----------
-
-2017-11-22
-----------
-
+ngA -- 11:25 PM
+  Improved accuracy of Food2Fork API
+  
 2017-11-21
 ----------
 chenX -- 8:07 PM
