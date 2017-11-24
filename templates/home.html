@@ -1,43 +1,67 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    <link rel="stylesheet" type="text/css" href="../static/home.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Weather</title>
+
+    <!-- Bootstrap core CSS -->
+   <link href="../static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="../static/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
+    
     <title>{{title}}</title>
 
+    <!-- Custom styles for this template -->
+    <link href="../static/home.css" rel="stylesheet">
+    <style>
+      body{
+      font-family: sans-serif;
+      margin: 3em;
+      padding-top: 4em;
+      }
+    </style>
   </head>
 
   <body>
-    <h1> Welcome to the Weather Team's image-food API! </h1>
-    <div class= "image"> <img src="../static/bigmac.jpg" width=80%> </div>
-    <br>
-    <div class="caption">
-      Here is a picture of a gourmet food!
-    </div>
-    <br>
-    <h3> A few guidelines: </h3>
-    <ul>
-      <li> Don't have any faces in the picture! </li>
-      <li> Don't have multiple foods in the picture! </li>
-      <li> Input a food image, and then press Get Data button. After pressing the Get Data button, text should appear in the text box below. When the text shows up, click the Submit button! </li>
-    </ul>
 
-    <input id="file" type="file"/>
-    <button id="button">Get Data!</button>
-    <br>
-    <form method="post" action="/recipes">
-      <input type="text" id="textb64" name="textBox">
-      <input type="submit" name="submitted" value="Submit">
-    </form>
- 
-    <!---
-    <input type="file" id="file"></input>
-    <form method="post" action="/recipes/">
-      <input type="submit" id="button" value="Submit" name="submitted"></input>
-      <input type="hidden" id="textb64" name="textBox">
-    </form>
-    --->
-    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+	<a class="navbar-brand" href="/">Weather</a>
+      </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container">
+      <div class="starter-template">
+        <h1> Welcome to the Weather Team's image-food API! </h1>
+        <div class="image"> <img src="../static/bigmac.jpg" width=80%> </div>
+        <br>
+        <div class="caption">
+          Here is a picture of a gourmet food!
+        </div>
+        <br>
+        <h3> A few guidelines: </h3>
+        <ul>
+          <li> Don't have any faces in the picture! </li>
+          <li> Don't have multiple foods in the picture! </li>
+          <li> Input a food image, and then press Get Data button. After pressing the Get Data button, text should appear in the text box below. When the text shows up, click the Submit button! </li>
+        </ul>
+
+        <input id="file" type="file"/>
+        <button id="button">Get Data!</button>
+        <br>
+        <form method="post" action="/recipes">
+          <input type="text" id="textb64" name="textBox">
+          <input type="submit" name="submitted" value="Submit">
+        </form>
+      </div>
+    </div><!-- /.container -->
+
+    <!-- Base encode js -->
     <script>
       document.getElementById("button").addEventListener('click', function() {
       var files = document.getElementById("file").files;
@@ -59,7 +83,6 @@
       };
       }
     </script>
+
   </body>
-
-
 </html>
