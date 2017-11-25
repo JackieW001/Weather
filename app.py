@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import requests, base64, json
+import requests, base64, json, os
 app = Flask(__name__)
 
 newJSON = ""
@@ -27,8 +27,17 @@ def root():
     #response2 = requests.post(url='https://food2fork.com/api/search?key=%s'%(key2))
 
 
+    #static/images folder
+    images=[]
+    for filename in os.listdir('static/images'):
+        if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(".png"):
+            images.append(os.path.join('../static/images', filename))
+        else:
+            continue
+    first=images[0]
+    images=images[1:]
+    return render_template("home.html", title="Weather", images=images, first=first)
 
-    return render_template("home.html", title="Weather")
 
 def getfile():
     return ""

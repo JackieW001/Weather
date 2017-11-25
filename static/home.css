@@ -1,5 +1,23 @@
 body{
-    font-family: sans-serif;
-    margin: 3em;
+    background-color: #D4D2D5;
+    color: #4F4D67;
     padding-top: 4em;
+    margin: 3em;
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    font-size: 30px;
+}
+
+img{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 100px;
+    max-height: 400px;
 }
