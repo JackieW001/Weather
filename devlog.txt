@@ -3,6 +3,11 @@ Jackie Woo, Xavier Chen, Alex Taradachuk, Angel Ng
 Period 8 Soft Dev Project 01
 
 Devlog:
+2017-11-25
+----------
+wooJ -- 12:51 PM
+  Added carousel to root
+
 2017-11-23
 ----------
 ngA -- 11:25 PM
