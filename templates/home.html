@@ -1,27 +1,12 @@
-<!DOACTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <title>Weather</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.js"></script>
-    <script src="../static/bootstrap/assets/js/ie-emulation-modes-warning.js"></script>
-    
+{% extends "base.html" %}
+{% block head %}
     <title>{{title}}</title>
 
     <!-- Custom styles for this template -->
     <link href="../static/home.css" rel="stylesheet">
-    </style>
-  </head>
+ {% endblock %}
 
-  <body>
-
+{% block body %}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -34,7 +19,7 @@
       <div class="starter-template">
         <h1> Welcome to the Weather's image-food API! </h1>
 
-	
+
 	<!-- Carousel -->
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 	  <ol class="carousel-indicators">
@@ -64,7 +49,7 @@
 	    <span class="sr-only">Next</span>
 	  </a>
 	</div>
-		  
+
 	  <br><br>
 	  <p id="intro"> If you ever wanted to learn how to make food you see at restaurants, you have come to the right place. Just give us a picture of your food, and we'll tell you all the recipes about it!</p>
 	<!-- Guidelines -->
@@ -111,15 +96,4 @@
       };
       }
     </script>
-    
-     <!-- Bootstrap core JavaScript  
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../static/bootstrap/assets/js/vendor/jquery.min.js"><\/script>\
-')</script>
-    <script src="../static/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../static/bootstrap/assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+{% endblock %}
