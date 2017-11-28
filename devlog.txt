@@ -5,6 +5,11 @@ Period 8 Soft Dev Project 01
 Devlog:
 2017-11-27
 ----------
+all -- 1:51 PM
+  Added thumbnail html and css
+
+2017-11-27
+----------
 wooJ -- 7:16 PM
   Fixed 403 error
   
