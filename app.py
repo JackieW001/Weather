@@ -58,18 +58,11 @@ def replaceRequest2(baseSixtyFour):
     newJSON=data.replace("toBeReplaced", baseSixtyFour)
     return newJSON
 
-def callgvision():
-    return ""
-
-def readgvision():
-    return ""
-
 @app.route("/recipes", methods=['POST'])
 def recipes():
     query = pullquery()
-    print query
     recipes = f2finfo(callf2f(query))
-    return render_template("recipes.html", data = recipes)
+    return render_template("recipes.html", data = recipes, query=query)
 
 def pullquery():
     if request.form['submitted'] == "Submit":
