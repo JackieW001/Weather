@@ -5,6 +5,9 @@ Period 8 Soft Dev Project 01
 Devlog:
 2017-11-27
 ----------
+chenX -- 6:12 PM
+  Added caption
+  
 all -- 1:51 PM
   Added thumbnail html and css
 
