@@ -92,10 +92,11 @@ def pullquery():
             retVal = food["description"]
             break
     return retVal
-        
+
 
 def callf2f(userquery):
     key = open('f2fKey.txt', 'rb').read()
+    key = key.strip()
     query = userquery
     r = requests.get('http://food2fork.com/api/search?key=%s&q=%s' %(key, query))
     data = r.json()["recipes"]
