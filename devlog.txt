@@ -3,6 +3,11 @@ Jackie Woo, Xavier Chen, Alex Taradachuk, Angel Ng
 Period 8 Soft Dev Project 01
 
 Devlog:
+2017-11-27
+----------
+wooJ -- 7:16 PM
+  Fixed 403 error
+  
 2017-11-26
 ----------
 wooJ -- 1:31 PM
