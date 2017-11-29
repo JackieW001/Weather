@@ -6,7 +6,7 @@ Using Google API Vision and Food2Fork API, we created a web app that will give y
 
 # Prerequisites
 1. Have Python Flask 
-2. Have Google Vision and Food2Fork API keys
+2. Have Google Vision and Food2Fork API keys. Place these keys in the same level as the app.py file.
 
 # To run
 1. Open new terminal
