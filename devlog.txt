@@ -5,10 +5,11 @@ Period 8 Soft Dev Project 01
 Devlog:
 2017-11-27
 ----------
+wooJ -- 9:16 PM
+  Added design doc changes pdf
 chenX -- 6:12 PM
-  Added caption
-  
-all -- 1:51 PM
+  Added caption 
+wooJ, chenX, ngA -- 1:51 PM
   Added thumbnail html and css
 
 2017-11-27
