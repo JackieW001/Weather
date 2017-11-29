@@ -1,12 +1,6 @@
-.body{
-    font-family: sans-serif;
-    padding: 3em;
-    background-color: red;
-		     
+body{
+    background-color: #f27474;
+    color: black;
+    padding-top: 4em;
+    margin: 3em;
 }
-.caption {
-    font-style: italic;
-    padding-top: 0px;
-    font-family: "Times New Roman", Times, serif;
-}
-

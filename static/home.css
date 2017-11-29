@@ -1,9 +1,4 @@
-body{
-    background-color: #D4D2D5;
-    color: #4F4D67;
-    padding-top: 4em;
-    margin: 3em;
-}
+
 
 h1{
     text-align: center;
@@ -18,6 +13,6 @@ img{
     display: block;
     margin: 0 auto;
     width: auto;
-    height: 100px;
-    max-height: 400px;
+    min-height: 300px;
+    max-height: 300px;
 }

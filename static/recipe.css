@@ -1,3 +1,8 @@
 .caption {
 	text-align: center!important;
+	color: white;
+	text-shadow: 1px 1px grey;
+}
+h1{
+	color: black;
 }
