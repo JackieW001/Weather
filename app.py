@@ -58,11 +58,34 @@ def replaceRequest2(baseSixtyFour):
     newJSON=data.replace("toBeReplaced", baseSixtyFour)
     return newJSON
 
-@app.route("/recipes", methods=['POST'])
+@app.route("/recipes", methods=['POST','GET'])
 def recipes():
-    query = pullquery()
-    recipes = f2finfo(callf2f(query))
-    return render_template("recipes.html", data = recipes, query=query)
+    try:   
+        query = pullquery()
+        recipes = f2finfo(callf2f(query[0]))    
+    except:
+        print request.args['query']
+        num = int(request.args['num'])
+        query = request.args['query']
+        query = query.split(",")
+        newquery = []
+        for entry in query:
+            entry = entry.strip("[").strip()[1:].strip("'").strip("]").strip("'")
+            newquery.append(entry)
+        print newquery
+        query = newquery
+        recipes = f2finfo(callf2f(query[num]))
+    size = []
+    start = 0
+    print len(query)
+    numL = len(query)
+    while start < numL:
+        size.append(start)
+        start += 1
+    try:
+        return render_template("recipes.html", data = recipes, query = query, size = size, numP = num)
+    except:
+        return render_template("recipes.html", data = recipes, query = query, size = size, numP = 0)
 
 def pullquery():
     if request.form['submitted'] == "Submit":
@@ -74,6 +97,7 @@ def pullquery():
     dict = json.loads(response.text)
 
     recipes = dict["responses"][0]["labelAnnotations"]
+    retVal = []
     for food in recipes:
         if "food" in food["description"]:
             pass
@@ -82,8 +106,8 @@ def pullquery():
         elif "cuisine" in food["description"]:
             pass
         else:
-            retVal = food["description"]
-            break
+            retVal.append(food["description"])
+            #break
     return retVal
 
 
